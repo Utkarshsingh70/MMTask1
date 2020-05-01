@@ -1,0 +1,18 @@
+class SwitchWidget extends StatefulWidget {
+  final bool current;
+  const SwitchWidget(this.current);
+  @override
+  State<StatefulWidget> createState() {
+    return SwitchWidgetState(current);
+  }
+}
+
+class SwitchWidgetState extends State<SwitchWidget> {
+  bool current;
+  SwitchWidgetState(this.current);
+
+  void toggleSwitch(bool value) {
+    if (current == false) {
+      setState(() {
+        current = true;
+      });

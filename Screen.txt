@@ -1,0 +1,114 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.teal,
+        body: SafeArea(
+          child: Container(
+            color: Colors.white,
+            margin: EdgeInsets.all(10.0),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  Container(
+                    height: 65.0,
+                    color: Colors.white,
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 100.0,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                width: 2.0,
+                                color: Colors.black,
+                                style: BorderStyle.solid),
+                          ),
+                          child: Icon(Icons.arrow_back_ios),
+                        ),
+                        Container(
+                          width: 100.0,
+                        ),
+                        Container(
+                          child: Center(
+                            child: Text(
+                              'Privacy',
+                              style: TextStyle(
+                                fontSize: 50.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: lists('Activity Status', ''),
+                  ),
+                  Container(
+                    child: lists('Private Account',
+                        'Only people you approve can see your photos and videos'),
+                  ),
+                  Container(
+                    child: lists('Location', ''),
+                  ),
+                  Container(
+                    child: lists('Permission to tag', ''),
+                  ),
+                  Container(
+                    child: lists('Date of year',
+                        'Do you want to show this year to public or not?'),
+                  ),
+                  Container(
+                    child: lists('Save to archive',
+                        'Automatically save photos and video to your archive'),
+                  ),
+                  Center(
+                    child: Container(
+                      width: 500.0,
+                      child: RaisedButton(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                          ),
+                          color: Colors.black,
+                          elevation: 15.0,
+                          child: Text(
+                            'Save',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          onPressed: () {}),
+                    ),
+                  ),
+                ]),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+ListTile lists(String a, String b) => ListTile(
+      title: Text(
+        a,
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      subtitle: Text(b),
+    );
+
